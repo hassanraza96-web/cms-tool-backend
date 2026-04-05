@@ -8,7 +8,7 @@ const repo = project[seleted].repo;
 const route = express.Router();
 function getTokken() {
     const point = JSON.parse(process.env.TOKKEN);
-    return point[seleted] ? point[seleted][project[seleted].tokken] : "";
+    return point ? point[project[seleted].tokken] : "";
 }
 
 route.get("/read-file", async (req, res) => {
