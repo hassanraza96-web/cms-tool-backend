@@ -9,7 +9,7 @@ const route = express.Router();
 function getTokken() {
     if (process.env.TOKKEN) {
         const point = JSON.parse(process.env.TOKKEN);
-        return point ? point[project[seleted].tokken] : "";
+        return point ? point[project[seleted].tokken] : ""
     } else {
         return "";
     }
