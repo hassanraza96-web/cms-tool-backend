@@ -16,7 +16,8 @@ function getTokken() {
 }
 
 route.get("/read-file", async (req, res) => {
-    const tokken = getTokken()
+    const tokken = getTokken();
+    return res.json(tokken);
     const { path } = req.query || "";
     readFileOrFolder(owner, repo, path ? path : "", tokken).then((e) => {
         res.json({
