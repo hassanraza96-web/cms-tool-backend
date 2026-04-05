@@ -7,12 +7,16 @@ const owner = project[seleted].owner;
 const repo = project[seleted].repo;
 const route = express.Router();
 function getTokken() {
-    const point = JSON.parse(process.env.TOKKEN);
-    return point ? point[project[seleted].tokken] : "";
+    if (process.env.TOKKEN) {
+        const point = JSON.parse(process.env.TOKKEN);
+        return point ? point[project[seleted].tokken] : "";
+    } else {
+        return "";
+    }
 }
 
 route.get("/read-file", async (req, res) => {
-    const tokken = getTokken();
+    const tokken = getTokken()
     const { path } = req.query || "";
     readFileOrFolder(owner, repo, path ? path : "", tokken).then((e) => {
         res.json({
