@@ -8,6 +8,7 @@ app.use(cors({
     origin: [
         "http://localhost:3007",
         "https://cms.myurbanlimos.com",
+        "https://vm-s3pp5kfc7u2fqfw7198qd4.vusercontent.net"
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
